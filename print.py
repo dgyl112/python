@@ -2,8 +2,7 @@
 # -*- coding: utf-8 -*-
 
 '''
-Created on 2015年1月8日
-
+Python 基础
 @author: lee
 '''
 
