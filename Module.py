@@ -72,27 +72,7 @@ def greeting(name):
     else:
         return _private_2(name)
 
-'''
-安装第三方模块
-在Python中，安装第三方模块，是通过setuptools这个工具完成的。
 
-PIL (Python Imaging Library)     处理图像的工具库
-MySQL-python:                    MySQL的驱动
-numpy                            用于科学计算的NumPy库
-Jinja2                           用于生成文本的模板工具
-'''
-
-
-try:
-    import Image
-    im = Image.open('test.png')
-    print im.format, im.size, im.mode
-    im2 = im.thumbnail((200, 100))
-    im.save('thumb.jpg', 'JPEG')
-except ImportError,e:
-    print e
-except IOError,e:
-    print e
 
 '''
 模块搜索路径

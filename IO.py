@@ -88,35 +88,6 @@ print [x for x in os.listdir('.') if os.path.isfile(x) and os.path.splitext(x)[1
 
 
 
-def searchDir(keyword,path='.'):
-    files = [x for x in os.listdir(path) if not os.path.isdir(x) ]
-    files = filter(lambda x: x.find(keyword) != -1, files)
-    return map(lambda x: os.path.join( os.path.abspath(path), x), files)
-
-def listDir(path=['.',]):
-    dirs = path
-    for dirpath in path:
-        dd = map(lambda x:os.path.join( dirpath, x) , [x for x in os.listdir(dirpath) if os.path.isdir(x)])
-        dirs.append(dd)
-        
-    if(len(dirs)>0):
-        return map(listDir, dirs)
-    else:
-        return [absPath,]
-
-def search(keyword,path='.'):
-    dirs = listDir(path)
-    dirs = filter(lambda x: x != None, dirs)
-    dirs.insert(0, os.path.abspath(path))
-    files = map(lambda x: searchDir(keyword, x), dirs)
-    return filter(lambda x: x != None and len(x) > 0 , files)
-
-# 当前目录以及当前目录的所有子目录下查找文件名包含指定字符串的文件，并打印出完整路径
-print '<============>'
-print search('py')
-
-print '<============>'
-
 '''
 序列化
 我们把变量从内存中变成可存储或传输的过程称之为序列化，在Python中叫pickling，
