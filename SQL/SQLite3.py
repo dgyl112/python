@@ -27,22 +27,3 @@ cursor.close()
 conn.commit()
 # 关闭Connection:
 conn.close()
-
-
-
-'''
-查询
-'''
-conn = sqlite3.connect('test.db')
-cursor = conn.cursor()
-# 占位符 ?
-# cursor.execute('select * from user where id=?', '1')
-cursor.execute('select * from user')
-
-# 获得查询结果集:
-values = cursor.fetchall()
-# [(1, u'Michael'), (2, u'Michael')]
-print values
-
-cursor.close()
-conn.close()
